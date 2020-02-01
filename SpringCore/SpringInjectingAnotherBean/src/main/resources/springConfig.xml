@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="employee" class="com.vikastadge.spring.beans.EmployeeEntity" scope="prototype">
+        <property name="department" value="IT"></property>
+    </bean>
+    <bean id="employeeService" class="com.vikastadge.spring.beans.EmployeeService">
+        <property name="dao" ref="employeeDAO"></property>
+    </bean>
+
+    <bean id="employeeDAO" class="com.vikastadge.spring.beans.AnotherEmployeeDAO">
+    </bean>
+</beans>
